@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <style>
+      body {
+        background: url("media/bg2.jpg") no-repeat center center fixed;
+        background-size: cover;
+      }
+
+      .sidebar {
+        background-color: #1a879c9b;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .sidebar img {
+        width: 100px;
+        margin-bottom: 20px;
+      }
+
+      .menu-item-box a {
+        display: block;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        margin-bottom: 10px;
+        background-color: rgba(255, 255, 255, 0.5);
+        color: #003366;
+      }
+
+      .menu-item-box a:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: #000;
+      }
+
+      .menu-item-box a:focus {
+        background-color: #ffffff;
+        color: #003366;
+        outline: none;
+      }
+
+      /* Gambar logo dan ikon di navbar */
+      .navbar .navbar-brand img,
+      .navbar-nav .nav-item img {
+        height: 40px; /* Ukuran konsisten untuk semua gambar di navbar */
+        width: auto; /* Menjaga rasio proporsi */
+        object-fit: contain; /* Memastikan gambar tidak terdistorsi */
+      }
+
+      /* Mengatur jarak dan tampilan pada tombol di navbar */
+      .navbar-nav .nav-item {
+        display: flex;
+        align-items: center;
+      }
+
+      /* Sesuaikan margin untuk logo agar jaraknya lebih simetris */
+      .navbar .navbar-brand img {
+        margin-right: 10px;
+      }
+
+      .content {
+        margin-left: 0;
+        padding: 20px;
+      }
+
+      .search-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .search-bar input {
+        border-radius: 20px 0 0 20px;
+        border-right: none;
+      }
+
+      .search-bar button {
+        border-radius: 0 20px 20px 0;
+      }
+
+      .card {
+        background: #ffffff;
+        border-radius: 25px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        padding: 15px;
+        margin-bottom: 20px;
+        transition: transform 0.2s;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+
+      .card img {
+        width: 100px; /* Menyesuaikan ukuran gambar agar pas dengan lingkaran */
+        height: 100px; /* Menyesuaikan ukuran gambar agar pas dengan lingkaran */
+        border-radius: 50%; /* Membuat gambar menjadi lingkaran */
+        margin: 0 auto 15px;
+        object-fit: cover; /* Memastikan gambar tidak pecah dan pas dengan lingkaran */
+        display: block;
+      }
+
+      .promo-section {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+        color: #ffffff;
+        padding: 30px;
+        background: #00c4cc; /* Ubah warna menjadi #00c4cc */
+        border-radius: 15px;
+        width: 100%;
+      }
+
+      .promo-section img {
+        width: 150px;
+        height: 150px;
+        margin-right: 20px;
+      }
+
+      .promo-section h5 {
+        margin: 0;
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      .promo-section p {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      .main-container {
+        background: #00c4cc; /* Ubah warna latar belakang menjadi #00c4cc */
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand">
+          <img src="media/logo.png" alt="Logo PharmaLink" style="height: 70px; width: auto; margin-right: 10px" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2">
+                <img src="media/home.jpeg" alt="Home Icon" style="width: 20px; height: 20px; cursor: pointer" onclick="goToHome()" />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-logout">
+                <img src="media/keluar.jpeg" alt="Logout Icon" style="width: 20px; height: 20px; cursor: pointer" onclick="logoutUser()" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3 sidebar">
+          <div class="menu-item-box">
+            <a href="dashboard_home.html">Home</a>
+            <a href="pendataan_user.html">Pendataan</a>
+            <a href="pemesanan_user.html">Pemesanan</a>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-9">
+          <div class="main-container">
+            <div class="promo-section">
+              <img src="media/apoteker.png" alt="Apoteker" />
+              <div>
+                <h5>Tebus Obat? Dari Rumah Aja!</h5>
+                <p>Teman Sehat Anda Setiap Saat</p>
+              </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+              <input type="text" id="searchInput" class="form-control" placeholder="Cari produk..." onkeyup="filterCollection()" />
+            </div>
+
+            <div class="row" id="productList">
+              <div class="col-md-3">
+                <a href="obat.html" class="card card-obat">
+                  <img src="media/obat.jpg" alt="Obat" />
+                  <h6>Obat</h6>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="suplemen.html" class="card card-suplemen">
+                  <img src="media/suplemen.jpg" alt="Suplemen" />
+                  <h6>Suplemen</h6>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="nutrisi.html" class="card card-nutrisi">
+                  <img src="media/nutrisi.jpg" alt="Nutrisi" />
+                  <h6>Nutrisi</h6>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="#" class="card card-herbal">
+                  <img src="media/herbal.jpg" alt="Herbal" />
+                  <h6>Herbal</h6>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="produk bayi.html" class="card card-produk-bayi">
+                  <img src="media/produk bayi.jpg" alt="Produk Bayi" />
+                  <h6>Produk Bayi</h6>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="#" class="card card-alkes">
+                  <img src="media/alkes.jpg" alt="Alat Kesehatan" />
+                  <h6>Alat Kesehatan</h6>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="#" class="card card-kecantikan">
+                  <img src="media/kecantikan.jpg" alt="Kecantikan" />
+                  <h6>Kecantikan</h6>
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="#" class="card card-lainnya">
+                  <img src="media/lainnya.jpg" alt="Lainnya" />
+                  <h6>Lainnya</h6>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function logoutUser() {
+        alert("Anda telah keluar.");
+        window.location.href = "index.html";
+      }
+
+      function goToHome() {
+        window.location.href = "login.html";
+      }
+
+      function filterCollection() {
+        const searchKeyword = document.getElementById("searchInput").value.toLowerCase();
+        const products = document.querySelectorAll("#productList .card");
+
+        products.forEach((product) => {
+          const category = product.querySelector("h6").textContent.toLowerCase();
+          const isMatchCategory = category.includes(searchKeyword);
+
+          if (isMatchCategory) {
+            product.style.display = "block";
+          } else {
+            product.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

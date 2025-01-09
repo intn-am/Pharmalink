@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PharmaLink Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      .hero-section {
+        background-color: #00c4cc;
+        background: url("media/bg2.jpg") no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        padding: 50px 20px;
+      }
+      .hero-section h1 {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .hero-section img {
+        max-width: 100%;
+      }
+      .hero-section .app-store-img,
+      .hero-section .play-store-img {
+        max-width: 30%;
+        height: auto;
+      }
+      .download-text {
+        font-size: 0.9rem;
+        font-weight: normal;
+        margin-bottom: 10px;
+        color: rgb(3, 1, 1);
+      }
+      .btn-primary {
+        background-color: #48c6ef;
+        border: none;
+      }
+      .btn-primary:hover {
+        background-color: #6f86d6;
+      }
+      .btn-secondary {
+        background-color: #c0c0c0; /* Abu-abu */
+        border: none;
+        color: white;
+      }
+      .btn-secondary:hover {
+        background-color: #919090; /* Abu-abu lebih gelap */
+      }
+      .about-section {
+        background: url("media/bg2.jpg") no-repeat center center fixed; /* Gambar sebagai latar belakang */
+        background-size: cover;
+        padding: 50px 20px;
+        margin-top: 115px;
+        margin-bottom: 50px;
+      }
+
+      .about-content {
+        background-color: rgb(255, 255, 255); /* Kotak putih */
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+        max-width: 800px;
+        margin: 0 auto; /* Tengah secara horizontal */
+        font-family: "Arial", sans-serif; /* Ubah font */
+      }
+
+      .about-content h2 {
+        font-family: "Georgia", serif; /* Font khusus untuk judul */
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .about-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .team-section {
+        background-color: #ffffff;
+        padding: 50px 20px;
+        margin-bottom: 50px;
+      }
+
+      .team-section h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .team-member {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .team-section .row {
+      row-gap: 20px; /* Atur jarak vertikal antar kolom */
+      } 
+
+      .team-member img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+
+      .testimonials-section {
+        background: url("media/bg2.jpg") no-repeat center center fixed; /* Gambar sebagai latar belakang */
+        background-size: cover;
+        padding: 50px 20px;
+        margin-top: 115px;
+        background-color: #bcc8d3;
+        padding: 50px 20px;
+        margin-bottom: 50px;
+      }
+
+      .testimonials-section h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .testimonial {
+        text-align: center;
+        margin-bottom: 30px; /* Memberikan jarak antar box */
+        margin-right: 10px; /* Jika ingin jarak horizontal antar box */
+        margin-left: 10px; /* Menambah jarak kiri antar box */
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .testimonial img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+
+      .testimonial p {
+        font-style: italic;
+      }
+
+      .testimonial span {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="media/logo.png" alt="Logo PharmaLink" style="height: 70px; width: auto; margin-right: 10px" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about-us">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact-us">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Masuk</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary" href="register.html">Daftar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="hero-section text-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h1>Software Apotek Handal</h1>
+            <img src="media/pharmalink.png" alt="Gambar Software Apotek" style="max-width: 80%; margin-top: 20px" />
+            <p class="lead"><strong>Teman Sehat Anda Setiap Saat</strong></p>
+            <a href="#" class="btn btn-secondary btn-lg">Coba Gratis</a>
+            <p class="mt-3">
+              <span class="download-text">Download Aplikasi PharmaLink</span><br />
+              <a href="https://www.apple.com/app-store/" target="_blank">
+                <img src="media/appstore.png" alt="App Store" class="app-store-img" />
+              </a>
+              <a href="https://play.google.com/store" target="_blank">
+                <img src="media/playstore.png" alt="Google Play" class="play-store-img" />
+              </a>
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img src="media/apotik.png" alt="Pharmacy" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="about-us" class="about-section">
+      <div class="about-content text-center">
+        <h2>About Us</h2>
+        <p><strong>PharmaLink: Teman Sehat Anda, Setiap Saat</strong></p>
+        <p>
+          PharmaLink adalah platform apotek online berbasis digital yang dirancang untuk memberikan kemudahan, kecepatan, dan kenyamanan bagi Anda dalam memenuhi kebutuhan kesehatan. Kami memahami bahwa kesehatan adalah aset paling
+          berharga, dan itulah mengapa kami hadir untuk memastikan setiap pelanggan mendapatkan layanan terbaik. Kami percaya bahwa setiap orang berhak mendapatkan akses kesehatan yang berkualitas, kapan saja dan di mana saja. Bersama
+          PharmaLink, perjalanan Anda menuju kesehatan yang lebih baik menjadi lebih mudah dan menyenangkan.
+        </p>
+      </div>
+    </section>
+
+    <section id="our-members" class="team-section">
+      <div class="container">
+        <h2>🩺 Meet Pharmalink Team⚕</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-4 team-member">
+            <img src="media/intan.jpg" alt="Team Member 1" />
+            <h5>Intan Aulia Muzdalifah</h5>
+            <p>Founder</p>
+            <p>23611040</p>
+          </div>
+          <div class="col-md-4 team-member">
+            <img src="media/firly.jpg" alt="Team Member 2" />
+            <h5>Firly Defina Rahma Sapari</h5>
+            <p>Founder</p>
+            <p>23611075</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-section">
+      <div class="container">
+        <h2>- Testimonials -</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-4 testimonial">
+            <img src="media/user1.jpg" alt="Iqbal" />
+            <p>"Proses pemesanan di PharmaLink sangat praktis dan cepat. Saya tidak perlu lagi repot mencari apotek terdekat. Benar-benar solusi yang membantu!"</p>
+            <span>- Iqbal</span>
+          </div>
+          <div class="col-md-4 testimonial">
+            <img src="media/user2.jpg" alt="Lisa" />
+            <p>"Saya sangat puas dengan layanan PharmaLink. min-Link ramah dan pengiriman obat selalu tepat waktu. Terima kasih, PharmaLink!"</p>
+            <span>- Lisa</span>
+          </div>
+          <div class="col-md-4 testimonial">
+            <img src="media/user3.jpeg" alt="Jake" />
+            <p>"Harga obat di PharmaLink sangat terjangkau dibandingkan tempat lain. Selain itu, kualitas dan keasliannya benar-benar terjamin."</p>
+            <span>- Jake</span>
+          </div>
+          <div class="col-md-4 testimonial">
+            <img src="media/user4.jpeg" alt="Lini" />
+            <p>"Aplikasi PharmaLink sangat user-friendly. Dalam beberapa klik saja, saya bisa mendapatkan semua kebutuhan kesehatan saya."</p>
+            <span>- Mahalini</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact-us" class="py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <!-- Section Informasi Kontak -->
+          <div class="col-md-6">
+            <h5>Contact Us:</h5>
+            <ul class="list-unstyled">
+              <li><strong>Email:</strong> <a href="mailto:info@pharmalink.com" class="text-decoration-none">information@pharmalink.com</a></li>
+              <li><strong>Phone:</strong> <a href="tel:+628123456789" class="text-decoration-none">+62 896-2614-1323 / +62 813-8230-9046</a></li>
+              <li><strong>Address:</strong> Jl. Wajib Sehat No. 123, Yogyakarta</li>
+            </ul>
+            <div>
+              <a href="https://www.facebook.com/pharmalink" target="_blank" class="text-decoration-none me-2">
+                <img src="media/fb.webp" alt="Facebook" style="width: 24px; height: 24px" />
+              </a>
+              <a href="https://www.instagram.com/apoteker_uii?igsh=em5jMTJhb3dsZXFl" target="_blank" class="text-decoration-none me-2">
+                <img src="media/ig.png" alt="Instagram" style="width: 24px; height: 24px" />
+              </a>
+              <a href="https://x.com/pharmalink" target="_blank" class="text-decoration-none">
+                <img src="media/x.webp" alt="X" style="width: 24px; height: 24px" />
+              </a>
+            </div>
+            <p class="mt-3">&copy; 2024 PharmaLink. All Rights Reserved.</p>
+          </div>
+
+          <!-- Section Peta -->
+          <div class="col-md-6">
+            <h5>Find Us:</h5>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.9606623881987!2d110.41593537357852!3d-7.687370776111434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5ea525264089%3A0x9788df14768a4b1e!2sPharmacies%20UII%20Farma!5e0!3m2!1sen!2sid!4v1736354347517!5m2!1sen!2sid"
+              width="100%"
+              height="250"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

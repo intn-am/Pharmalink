@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pemesanan Obat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <style>
+      body {
+        background: url("media/bg2.jpg") no-repeat center center fixed;
+        background-size: cover;
+      }
+      .sidebar {
+        background-color: #1a879c9b;
+        min-height: 100vh;
+        padding: 20px;
+      }
+      .sidebar img {
+        width: 100px;
+        margin-bottom: 20px;
+      }
+      .menu-item-box a {
+        display: block;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        margin-bottom: 10px;
+        background-color: rgba(255, 255, 255, 0.5);
+        color: #003366;
+      }
+      .menu-item-box a:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: #000;
+      }
+      .main-container {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+      }
+      .form-title {
+        font-size: 25px;
+        font-weight: bold;
+        color: #003366;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .product-image {
+        width: 100%;
+        max-height: 300px;
+        object-fit: contain;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand">
+          <img src="media/logo.png" alt="Logo" style="height: 70px; width: auto; margin-right: 10px" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2">
+                <img src="media/home.jpeg" alt="Home Icon" style="width: 20px; height: 20px; cursor: pointer" onclick="goToHome()" />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-logout">
+                <img src="media/keluar.jpeg" alt="Logout Icon" style="width: 20px; height: 20px; cursor: pointer" onclick="logoutUser()" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3 sidebar">
+          <div class="menu-item-box">
+            <a href="dashboard_home.html">Home</a>
+            <a href="pendataan_user.html">Pendataan</a>
+            <a href="pemesanan_user.html">Pemesanan</a>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-9">
+          <div class="main-container">
+            <div class="form-title">Formulir Pemesanan Obat</div>
+            <form name="Pemesanan-Form">
+              <!-- Nama Pengguna -->
+              <div class="mb-3">
+                <label for="namaPengguna" class="form-label">Nama Pengguna:</label>
+                <input type="text" class="form-control" id="namaPengguna" name="namaPengguna" placeholder="Masukkan nama Anda" required />
+              </div>
+
+              <!-- Nomor Telepon -->
+              <div class="mb-3">
+                <label for="nomorTelepon" class="form-label">Nomor Telepon:</label>
+                <input type="text" class="form-control" id="nomorTelepon" name="nomorTelepon" placeholder="Masukkan nomor telepon Anda" required />
+              </div>
+
+              <!-- Jenis Produk -->
+              <div class="mb-3">
+                <label for="jenisProduk" class="form-label">Jenis Produk:</label>
+                <select class="form-select" id="jenisProduk" name="jenisProduk" required>
+                  <option value="obat" selected>Obat</option>
+                  <option value="suplemen">Suplemen</option>
+                  <option value="nutrisi">Nutrisi</option>
+                  <option value="herbal">Herbal</option>
+                  <option value="produk_bayi">Produk Bayi</option>
+                  <option value="alat_kesehatan">Alat Kesehatan</option>
+                  <option value="kecantikan">Kecantikan</option>
+                  <option value="lainnya">Lainnya</option>
+                </select>
+              </div>
+
+              <!-- Nama Produk -->
+              <div class="mb-3">
+                <label for="namaProduk" class="form-label">Nama Produk:</label>
+                <input type="text" class="form-control" id="namaProduk" name="namaProduk" placeholder="Masukkan nama produk" required />
+              </div>
+
+              <!-- Jumlah -->
+              <div class="mb-3">
+                <label for="jumlah" class="form-label">Jumlah:</label>
+                <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" value="1" required />
+              </div>
+
+              <!-- Alamat Pengantaran -->
+              <div class="mb-3">
+                <label for="alamatPengantaran" class="form-label"> Alamat Pengantaran: </label>
+                <textarea class="form-control" id="alamatPengantaran" name="alamatPengantaran" rows="3" placeholder="Masukkan alamat pengantaran..." required></textarea>
+              </div>
+
+              <!-- Metode Pembayaran -->
+              <div class="mb-3">
+                <label for="metodePembayaran" class="form-label"> Metode Pembayaran: </label>
+                <select class="form-select" id="metodePembayaran" name="metodePembayaran" required>
+                  <option value="COD">COD</option>
+                  <option value="Transfer Bank">Transfer Bank</option>
+                  <option value="E-wallet">E-wallet</option>
+                </select>
+              </div>
+
+              <!-- Tombol Pesan Sekarang -->
+              <button type="submit" class="btn btn-primary w-100">Pesan Sekarang</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // Update gambar produk berdasarkan jenis produk yang dipilih
+      const jenisProdukDropdown = document.getElementById("jenisProduk");
+      const productImage = document.getElementById("productImage");
+
+      jenisProdukDropdown.addEventListener("change", () => {
+        const selectedValue = jenisProdukDropdown.value;
+        const images = {
+          obat: "media/obat.jpg",
+          suplemen: "media/suplemen.jpg",
+          nutrisi: "media/nutrisi.jpg",
+          herbal: "media/herbal.jpg",
+          produk_bayi: "media/produk_bayi.jpg",
+          alat_kesehatan: "media/alkes.jpg",
+          kecantikan: "media/kecantikan.jpg",
+          lainnya: "media/lainnya.jpg",
+        };
+        productImage.src = images[selectedValue] || "media/default.jpg";
+      });
+
+      // Fungsi untuk logout
+      function logoutUser() {
+        alert("Anda telah keluar.");
+        window.location.href = "index.html";
+      }
+
+      // Fungsi untuk kembali ke halaman utama
+      function goToHome() {
+        window.location.href = "login.html";
+      }
+
+      // Kirim data form ke Google Apps Script
+      const scriptURL = "https://script.google.com/macros/s/AKfycbzuEjtyIllqnmd93Nk5Y_wltsqb7kIltuSVLLYbohaZsJlHWVTM1MyKbuUCGZ0NJ-kx/exec";
+      const form = document.forms["Pemesanan-Form"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            console.log("Success!", response);
+            alert("Pemesanan anda akan di proses dan dikirimkan!😊");
+          })
+          .catch((error) => {
+            console.error("Error!", error.message);
+            alert("Gagal mengirimkan pesanan!");
+          });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
